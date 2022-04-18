@@ -108,12 +108,15 @@ class CatalogController {
 
 		@NotEmpty
 		String getComment();
+		
+		@NotEmpty
+		String getUser();
 
 		@Range(min = 1, max = 5)
 		Integer getRating();
 
 		default Comment toComment(LocalDateTime time) {
-			return new Comment(getComment(), getRating(), time);
+			return new Comment(getComment(), getRating(), time, getUser());
 		}
 	}
 }

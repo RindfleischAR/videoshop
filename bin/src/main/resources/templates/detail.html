@@ -50,7 +50,6 @@
                             </div>
                         </div>
                         <div class="text" th:text="${comment.text}">Guter Film vong Inhalt her</div>
-                         <div class="user" th:text="${comment.user}">LOL</div>
                     </div>
                 </div>
 
@@ -65,10 +64,6 @@
                     <div class="field" th:classappend="${#fields.hasErrors('rating')} ? 'error' : ''">
                         <label th:text="#{detail.comment.rating}" for="rating">Bewertung</label>
                         <input id="rating" name="rating" type="number" th:field="*{rating}" value="5" required="required" min="1" max="5" />
-                    </div>
-                     <div class="field" th:classappend="${#fields.hasErrors('user')} ? 'error' : ''">
-                        <label th:text="#{detail.comment.user}" for="user">Gewünschter Name</label>
-                        <textarea id="user" name="user" th:field="*{user}" cols="1" rows="1" required="required"></textarea><br/>
                     </div>
                     <button type="submit" class="ui labeled icon button">
                         <i class="icon edit"></i><span th:text="#{detail.comment.addComment}"> Kommentieren</span>
